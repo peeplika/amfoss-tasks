@@ -1,6 +1,7 @@
 import discord
+import os
 from scraper import *
-TOKEN = "MTIwODAyNjc1Nzc4MTkxMzYxMQ.G9xoIe.kk8B0hxB5XH5Mj-lj8upTSRrIobk6oMbiUnvtk"
+
 intents = discord.Intents.default() 
 intents.message_content = True 
 intents.all()
@@ -31,4 +32,4 @@ async def on_message(message):
     
   if message.content.startswith("\list"):
     await message.channel.send("\livescore\n\generate\n\list")
-client.run(TOKEN)
+client.run(os.getenv("TOKEN"))
